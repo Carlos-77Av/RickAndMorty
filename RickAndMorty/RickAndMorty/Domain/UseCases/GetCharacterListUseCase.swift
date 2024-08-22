@@ -15,7 +15,7 @@ class GetCharacterListUseCase: GetCharacterListUseCaseType {
         self.repository = repository
     }
 
-    func execute(page: Int) -> AnyPublisher<[Character], Error> {
+    func execute(page: Int) -> AnyPublisher<[Character], NetworkError> {
         return repository.getCharacterList(page: page)
     }
 }

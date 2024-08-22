@@ -15,5 +15,5 @@ protocol HasNetworkClient {
 }
 
 protocol NetworkClientType {
-    func request<Query: GraphQLQuery>(for query: Query) -> AnyPublisher<Query.Data, Error>
+    func request<Query: GraphQLQuery>(for query: Query) -> AnyPublisher<Query.Data, NetworkError>
 }

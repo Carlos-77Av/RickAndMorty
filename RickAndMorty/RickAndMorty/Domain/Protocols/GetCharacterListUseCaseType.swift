@@ -12,5 +12,5 @@ protocol HasGetCharacterListUseCase {
 }
 
 protocol GetCharacterListUseCaseType {
-    func execute(page: Int) -> AnyPublisher<[Character], Error>
+    func execute(page: Int) -> AnyPublisher<[Character], NetworkError>
 }
