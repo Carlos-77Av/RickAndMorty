@@ -24,7 +24,7 @@ struct CharacterListView: View {
             }
         }
         .listStyle(.plain)
-        .navigationTitle("Rick and Morty")
+        .navigationTitle(R.string.localizable.characterListNavbarTitle())
         .onAppear {
             viewModel.fetchCharacters()
         }

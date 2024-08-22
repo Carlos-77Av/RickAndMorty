@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  RickAndMorty
+
+  Created by Carlos Alvarez on 22/8/24.
+  
+*/
+
+// MARK: - Navigation title
+"character.list.navbar.title" = "Rick and Morty";
