@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  RickAndMorty
+
+  Created by Carlos Alvarez on 22/8/24.
+  
+*/
+
+// MARK: - CharacterListView
+"character.list.navbar.title" = "Rick and Morty";
+"character.list.card.specie %@" = "Specie: %@";

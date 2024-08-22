@@ -15,5 +15,6 @@ struct Character {
     var type: String?
     var gender: String?
     var image: String?
+    var location: Location?
     var episode: [Episode]?
 }

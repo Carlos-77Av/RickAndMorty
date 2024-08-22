@@ -9,25 +9,46 @@ import SwiftUI
 
 struct CharacterListView: View {
     @StateObject var viewModel: CharacterListViewModel
+    @State private var offset: CGFloat = -20
     
     var body: some View {
         List {
-            ForEach(viewModel.characterList, id: \.id) { character in
-                NavigationLink {
-                    Text("\(character.id) - \(character.name)")
-                } label: {
-                    Text("\(character.id) - \(character.name)")
-                }
-                .onAppear {
-                    viewModel.loadMoreIfNeeded(currentItem: character)
-                }
-            }
+            characterList
         }
         .listStyle(.plain)
-        .navigationTitle("Rick and Morty")
+        .navigationTitle(R.string.localizable.characterListNavbarTitle())
+        .background(appBackground)
         .onAppear {
             viewModel.fetchCharacters()
         }
+    }
+    
+    private var characterList: some View {
+        ForEach(viewModel.characterList, id: \.id) { character in
+            NavigationLink(destination: Text("\(character.id) - \(character.name)")) {
+                CharacterRowView(character: character)
+            }
+            .cardStyle()
+            .onAppear {
+                viewModel.loadMoreIfNeeded(currentItem: character)
+            }
+        }
+        .listRowBackground(Color.clear)
+        .listRowSeparator(.hidden)
+    }
+    
+    private var appBackground: some View {
+        Image(R.image.appBackground)
+            .resizable()
+            .ignoresSafeArea()
+            .scaledToFill()
+            .overlay(Color.black.opacity(0.5))
+            .offset(y: offset)
+            .onAppear {
+                withAnimation(.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
+                    offset = 20
+                }
+            }
     }
 }
 
