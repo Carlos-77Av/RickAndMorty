@@ -9,6 +9,10 @@ import SwiftUI
 
 @main
 struct RickAndMortyApp: App {
+    init() {
+        UINavigationBar.setCustomAppearance()
+    }
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
