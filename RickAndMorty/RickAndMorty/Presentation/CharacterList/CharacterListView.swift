@@ -8,17 +8,30 @@
 import SwiftUI
 
 struct CharacterListView: View {
+    @StateObject var viewModel: CharacterListViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List {
+            ForEach(viewModel.characterList, id: \.id) { character in
+                NavigationLink {
+                    Text(" \(character.id) - \(character.name)")
+                } label: {
+                    Text(" \(character.id) - \(character.name)")
+                }
+            }
         }
-        .padding()
+        .listStyle(.plain)
+        .navigationTitle("Rick and Morty")
+        .onAppear {
+            viewModel.fetchCharacters()
+        }
     }
 }
 
 #Preview {
-    CharacterListView()
+    CharacterListView(
+        viewModel: .init(
+            dependencies: CharacterListViewModelDependencies()
+        )
+    )
 }
