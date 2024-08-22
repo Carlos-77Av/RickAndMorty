@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,11 @@
 		9D38B8492C77091C007FBC50 /* RickAndMortyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D38B8482C77091C007FBC50 /* RickAndMortyTests.swift */; };
 		9D38B8532C77091C007FBC50 /* RickAndMortyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D38B8522C77091C007FBC50 /* RickAndMortyUITests.swift */; };
 		9D38B8552C77091C007FBC50 /* RickAndMortyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D38B8542C77091C007FBC50 /* RickAndMortyUITestsLaunchTests.swift */; };
+		9D38B8652C770EB1007FBC50 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 9D38B8642C770EB1007FBC50 /* Apollo */; };
+		9D38B86B2C770F20007FBC50 /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = 9D38B86A2C770F20007FBC50 /* schema.graphqls */; };
+		9D38B86F2C770F89007FBC50 /* CharacterListQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9D38B86E2C770F89007FBC50 /* CharacterListQuery.graphql */; };
+		9D38B8722C770FC9007FBC50 /* CharacterInfoFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9D38B8712C770FC9007FBC50 /* CharacterInfoFragment.graphql */; };
+		9D38B8752C771079007FBC50 /* Rickandmortyapi in Frameworks */ = {isa = PBXBuildFile; productRef = 9D38B8742C771079007FBC50 /* Rickandmortyapi */; };
 		9F446B526637C4BD246528CC /* Pods_RickAndMortyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DCEDA32D42FFC6DEBA7C7F /* Pods_RickAndMortyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +57,9 @@
 		9D38B84E2C77091C007FBC50 /* RickAndMortyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D38B8522C77091C007FBC50 /* RickAndMortyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyUITests.swift; sourceTree = "<group>"; };
 		9D38B8542C77091C007FBC50 /* RickAndMortyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9D38B86A2C770F20007FBC50 /* schema.graphqls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
+		9D38B86E2C770F89007FBC50 /* CharacterListQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CharacterListQuery.graphql; sourceTree = "<group>"; };
+		9D38B8712C770FC9007FBC50 /* CharacterInfoFragment.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CharacterInfoFragment.graphql; sourceTree = "<group>"; };
 		A8F111E8007331C05FB4938F /* Pods_RickAndMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickAndMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA125FA7CED79A18689FC46F /* Pods-RickAndMorty-RickAndMortyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty-RickAndMortyUITests.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMorty-RickAndMortyUITests/Pods-RickAndMorty-RickAndMortyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB718DF42B4AF758236C3EB7 /* Pods-RickAndMortyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMortyTests.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMortyTests/Pods-RickAndMortyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,7 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D38B8752C771079007FBC50 /* Rickandmortyapi in Frameworks */,
 				98E1512300A703BAF3958761 /* Pods_RickAndMorty.framework in Frameworks */,
+				9D38B8652C770EB1007FBC50 /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				9D38B8612C770E2B007FBC50 /* MainApp */,
+				9D38B8662C770EC7007FBC50 /* GraphQL */,
 				9D38B8622C770E38007FBC50 /* SupportingFiles */,
 			);
 			path = RickAndMorty;
@@ -160,6 +171,48 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		9D38B8662C770EC7007FBC50 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				9D38B8672C770ED2007FBC50 /* Operations */,
+				9D38B8682C770EDD007FBC50 /* Schema */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		9D38B8672C770ED2007FBC50 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				9D38B8702C770F9D007FBC50 /* Fragments */,
+				9D38B8692C770EF5007FBC50 /* Queries */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		9D38B8682C770EDD007FBC50 /* Schema */ = {
+			isa = PBXGroup;
+			children = (
+				9D38B86A2C770F20007FBC50 /* schema.graphqls */,
+			);
+			path = Schema;
+			sourceTree = "<group>";
+		};
+		9D38B8692C770EF5007FBC50 /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				9D38B86E2C770F89007FBC50 /* CharacterListQuery.graphql */,
+			);
+			path = Queries;
+			sourceTree = "<group>";
+		};
+		9D38B8702C770F9D007FBC50 /* Fragments */ = {
+			isa = PBXGroup;
+			children = (
+				9D38B8712C770FC9007FBC50 /* CharacterInfoFragment.graphql */,
+			);
+			path = Fragments;
+			sourceTree = "<group>";
+		};
 		A3D48967947CA8CAAC151107 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +254,10 @@
 			dependencies = (
 			);
 			name = RickAndMorty;
+			packageProductDependencies = (
+				9D38B8642C770EB1007FBC50 /* Apollo */,
+				9D38B8742C771079007FBC50 /* Rickandmortyapi */,
+			);
 			productName = RickAndMorty;
 			productReference = 9D38B8342C77091A007FBC50 /* RickAndMorty.app */;
 			productType = "com.apple.product-type.application";
@@ -276,6 +333,10 @@
 				Base,
 			);
 			mainGroup = 9D38B82B2C77091A007FBC50;
+			packageReferences = (
+				9D38B8632C770EB1007FBC50 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				9D38B8732C771079007FBC50 /* XCLocalSwiftPackageReference "rickandmortyapi" */,
+			);
 			productRefGroup = 9D38B8352C77091A007FBC50 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -292,7 +353,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D38B8722C770FC9007FBC50 /* CharacterInfoFragment.graphql in Resources */,
 				9D38B83F2C77091B007FBC50 /* Preview Assets.xcassets in Resources */,
+				9D38B86B2C770F20007FBC50 /* schema.graphqls in Resources */,
+				9D38B86F2C770F89007FBC50 /* CharacterListQuery.graphql in Resources */,
 				9D38B83C2C77091B007FBC50 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -758,6 +822,36 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		9D38B8732C771079007FBC50 /* XCLocalSwiftPackageReference "rickandmortyapi" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = rickandmortyapi;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9D38B8632C770EB1007FBC50 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.15.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9D38B8642C770EB1007FBC50 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D38B8632C770EB1007FBC50 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		9D38B8742C771079007FBC50 /* Rickandmortyapi */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Rickandmortyapi;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9D38B82C2C77091A007FBC50 /* Project object */;
 }
