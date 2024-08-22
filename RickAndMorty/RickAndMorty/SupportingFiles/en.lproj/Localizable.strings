@@ -6,5 +6,6 @@
   
 */
 
-// MARK: - Navigation title
+// MARK: - CharacterListView
 "character.list.navbar.title" = "Rick and Morty";
+"character.list.card.specie %@" = "Specie: %@";

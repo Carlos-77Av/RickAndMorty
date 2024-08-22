@@ -38,6 +38,7 @@
 		9D6EF33E2C77A2E50080638E /* rswift in Frameworks */ = {isa = PBXBuildFile; productRef = 9D6EF33D2C77A2E50080638E /* rswift */; };
 		9D6EF3482C77A5B20080638E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D6EF34A2C77A5B20080638E /* Localizable.strings */; };
 		9D6EF34D2C77AA5D0080638E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EF34C2C77AA5D0080638E /* Location.swift */; };
+		9D6EF3512C77AEF50080638E /* Extensions+UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6EF3502C77AEF50080638E /* Extensions+UINavigationBar.swift */; };
 		9F446B526637C4BD246528CC /* Pods_RickAndMortyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DCEDA32D42FFC6DEBA7C7F /* Pods_RickAndMortyTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,8 +91,8 @@
 		9D38B89E2C772263007FBC50 /* RepositoryDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDependencies.swift; sourceTree = "<group>"; };
 		9D38B8A32C772406007FBC50 /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
 		9D6EF3492C77A5B20080638E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9D6EF34B2C77A5B90080638E /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		9D6EF34C2C77AA5D0080638E /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		9D6EF3502C77AEF50080638E /* Extensions+UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UINavigationBar.swift"; sourceTree = "<group>"; };
 		A8F111E8007331C05FB4938F /* Pods_RickAndMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickAndMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA125FA7CED79A18689FC46F /* Pods-RickAndMorty-RickAndMortyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty-RickAndMortyUITests.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMorty-RickAndMortyUITests/Pods-RickAndMorty-RickAndMortyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB718DF42B4AF758236C3EB7 /* Pods-RickAndMortyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMortyTests.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMortyTests/Pods-RickAndMortyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -310,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				9D38B8962C77218D007FBC50 /* Config */,
+				9D6EF34F2C77AED70080638E /* UIConfig */,
 				9D38B8892C771579007FBC50 /* Networking */,
 			);
 			path = Infrastructure;
@@ -356,6 +358,14 @@
 				9D38B8A32C772406007FBC50 /* CharacterListViewModel.swift */,
 			);
 			path = CharacterList;
+			sourceTree = "<group>";
+		};
+		9D6EF34F2C77AED70080638E /* UIConfig */ = {
+			isa = PBXGroup;
+			children = (
+				9D6EF3502C77AEF50080638E /* Extensions+UINavigationBar.swift */,
+			);
+			path = UIConfig;
 			sourceTree = "<group>";
 		};
 		A3D48967947CA8CAAC151107 /* Frameworks */ = {
@@ -480,7 +490,6 @@
 			knownRegions = (
 				en,
 				Base,
-				"es-419",
 			);
 			mainGroup = 9D38B82B2C77091A007FBC50;
 			packageReferences = (
@@ -640,6 +649,7 @@
 			files = (
 				9D38B8832C77134B007FBC50 /* GetCharacterListUseCase.swift in Sources */,
 				9D38B8872C77152B007FBC50 /* CharacterRepository.swift in Sources */,
+				9D6EF3512C77AEF50080638E /* Extensions+UINavigationBar.swift in Sources */,
 				9D38B8792C771266007FBC50 /* Character.swift in Sources */,
 				9D38B88B2C771598007FBC50 /* NetworkClientType.swift in Sources */,
 				9D38B89F2C772263007FBC50 /* RepositoryDependencies.swift in Sources */,
@@ -697,7 +707,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				9D6EF3492C77A5B20080638E /* en */,
-				9D6EF34B2C77A5B90080638E /* es-419 */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
