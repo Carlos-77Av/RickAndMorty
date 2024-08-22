@@ -10,10 +10,10 @@ import Foundation
 struct Character {
     let id: String
     let name: String
-    let status: String?
-    let species: String?
-    let type: String?
-    let gender: String?
-    let image: String?
-    let episode: [Episode]?
+    var status: String?
+    var species: String?
+    var type: String?
+    var gender: String?
+    var image: String?
+    var episode: [Episode]?
 }
