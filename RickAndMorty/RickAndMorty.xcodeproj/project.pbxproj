@@ -111,10 +111,8 @@
 		9D38B8362C77091A007FBC50 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
-				9D38B8372C77091A007FBC50 /* RickAndMortyApp.swift */,
-				9D38B8392C77091A007FBC50 /* ContentView.swift */,
-				9D38B83B2C77091B007FBC50 /* Assets.xcassets */,
-				9D38B83D2C77091B007FBC50 /* Preview Content */,
+				9D38B8612C770E2B007FBC50 /* MainApp */,
+				9D38B8622C770E38007FBC50 /* SupportingFiles */,
 			);
 			path = RickAndMorty;
 			sourceTree = "<group>";
@@ -142,6 +140,24 @@
 				9D38B8542C77091C007FBC50 /* RickAndMortyUITestsLaunchTests.swift */,
 			);
 			path = RickAndMortyUITests;
+			sourceTree = "<group>";
+		};
+		9D38B8612C770E2B007FBC50 /* MainApp */ = {
+			isa = PBXGroup;
+			children = (
+				9D38B8372C77091A007FBC50 /* RickAndMortyApp.swift */,
+				9D38B8392C77091A007FBC50 /* ContentView.swift */,
+			);
+			path = MainApp;
+			sourceTree = "<group>";
+		};
+		9D38B8622C770E38007FBC50 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9D38B83D2C77091B007FBC50 /* Preview Content */,
+				9D38B83B2C77091B007FBC50 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		A3D48967947CA8CAAC151107 /* Frameworks */ = {
@@ -570,7 +586,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RickAndMorty/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RickAndMorty/SupportingFiles/Preview Content\"";
 				DEVELOPMENT_TEAM = DSVD277BF8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -600,7 +616,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RickAndMorty/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RickAndMorty/SupportingFiles/Preview Content\"";
 				DEVELOPMENT_TEAM = DSVD277BF8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
