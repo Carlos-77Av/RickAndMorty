@@ -13,5 +13,5 @@ protocol HasCharacterRepository {
 }
 
 protocol CharacterRepositoryType {
-    func getCharacterList(page: Int) -> AnyPublisher<[Character], Error>
+    func getCharacterList(page: Int) -> AnyPublisher<[Character], NetworkError>
 }

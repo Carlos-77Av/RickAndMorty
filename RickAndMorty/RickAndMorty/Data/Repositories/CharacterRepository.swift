@@ -18,7 +18,7 @@ class CharacterRepository: CharacterRepositoryType {
         self.dependencies = dependencies
     }
     
-    func getCharacterList(page: Int) -> AnyPublisher<[Character], Error> {
+    func getCharacterList(page: Int) -> AnyPublisher<[Character], NetworkError> {
         let query = CharacterListQuery(page: .some(page))
         
         return dependencies
