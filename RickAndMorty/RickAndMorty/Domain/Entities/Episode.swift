@@ -8,6 +8,6 @@
 import Foundation
 
 struct Episode {
-    let id: String
     let name: String
+    let episode: String
 }
