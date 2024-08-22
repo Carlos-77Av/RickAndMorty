@@ -39,9 +39,23 @@ class CharacterListViewModel: ObservableObject {
                 guard let self = self, !characters.isEmpty else { return }
                 
                 self.characterList.append(contentsOf: characters)
+                self.currentPage += 1
                 
                 print(characters)
             })
             .store(in: &cancellables)
+    }
+    
+    func loadMoreIfNeeded(currentItem character: Character?) {
+        guard let character = character else {
+            fetchCharacters()
+            return
+        }
+        
+        let indexTriggerPagination = characterList.index(characterList.endIndex, offsetBy: -5)
+        
+        if characterList.firstIndex(where: { $0.id == character.id }) == indexTriggerPagination {
+            fetchCharacters()
+        }
     }
 }

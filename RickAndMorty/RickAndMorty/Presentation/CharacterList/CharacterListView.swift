@@ -14,9 +14,12 @@ struct CharacterListView: View {
         List {
             ForEach(viewModel.characterList, id: \.id) { character in
                 NavigationLink {
-                    Text(" \(character.id) - \(character.name)")
+                    Text("\(character.id) - \(character.name)")
                 } label: {
-                    Text(" \(character.id) - \(character.name)")
+                    Text("\(character.id) - \(character.name)")
+                }
+                .onAppear {
+                    viewModel.loadMoreIfNeeded(currentItem: character)
                 }
             }
         }
