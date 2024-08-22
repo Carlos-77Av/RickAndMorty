@@ -88,6 +88,11 @@ public class CharacterListQuery: GraphQLQuery {
         public var id: Rickandmortyapi.ID? { __data["id"] }
         /// The name of the character.
         public var name: String? { __data["name"] }
+        /// Link to the character's image.
+        /// All images are 300x300px and most are medium shots or portraits since they are intended to be used as avatars.
+        public var image: String? { __data["image"] }
+        /// The species of the character.
+        public var species: String? { __data["species"] }
 
         public struct Fragments: FragmentContainer {
           public let __data: DataDict

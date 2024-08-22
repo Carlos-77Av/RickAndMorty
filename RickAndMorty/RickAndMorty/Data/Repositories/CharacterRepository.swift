@@ -27,7 +27,7 @@ class CharacterRepository: CharacterRepositoryType {
             .compactMap { graphqlData in
                 guard let characters = graphqlData.characters?.results else { return [] }
                 
-                return characters.map { Character(id: $0?.id ?? "", name: $0?.name ?? "") }
+                return characters.map { Character(id: $0?.id ?? "", name: $0?.name ?? "", species: $0?.species, image: $0?.image) }
             }
             .eraseToAnyPublisher()
     }
