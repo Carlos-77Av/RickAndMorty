@@ -12,14 +12,25 @@ struct CharacterListView: View {
     @State private var offset: CGFloat = -20
     
     var body: some View {
-        List {
-            characterList
-        }
-        .listStyle(.plain)
-        .navigationTitle(R.string.localizable.characterListNavbarTitle())
-        .background(appBackground)
-        .onAppear {
-            viewModel.fetchCharacters()
+        mainContent
+            .navigationTitle(R.string.localizable.characterListNavbarTitle())
+            .background(appBackground)
+            .onAppear {
+                viewModel.fetchCharacters()
+            }
+    }
+    
+    private var mainContent: some View {
+        VStack {
+            if viewModel.showProgressView {
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else {
+                List {
+                    characterList
+                }
+                .listStyle(.plain)
+            }
         }
     }
     

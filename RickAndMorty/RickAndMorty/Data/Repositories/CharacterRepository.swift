@@ -10,7 +10,7 @@ import Combine
 import Rickandmortyapi
 
 class CharacterRepository: CharacterRepositoryType {
-    typealias Dependencies = HasNetworkClient
+    typealias Dependencies = HasNetworkClient & HasCharacterMapper
     
     private let dependencies: Dependencies
     
@@ -24,10 +24,8 @@ class CharacterRepository: CharacterRepositoryType {
         return dependencies
             .client
             .request(for: query)
-            .compactMap { graphqlData in
-                guard let characters = graphqlData.characters?.results else { return [] }
-                
-                return characters.map { Character(id: $0?.id ?? "", name: $0?.name ?? "", species: $0?.species, image: $0?.image) }
+            .compactMap { [weak self] graphqlResult in
+                self?.dependencies.mapper.map(graphqlData: graphqlResult)
             }
             .eraseToAnyPublisher()
     }
@@ -38,23 +36,9 @@ class CharacterRepository: CharacterRepositoryType {
         return dependencies
             .client
             .request(for: query)
-            .flatMap { graphqlData -> AnyPublisher<Character, NetworkError> in
-                if let character = graphqlData.character {
-                    let mappedCharacter = Character(
-                        id: character.id ?? "",
-                        name: character.name ?? "",
-                        status: character.status, 
-                        species: character.species,
-                        gender: character.gender,
-                        image: character.image,
-                        location: Location(
-                            name: character.location?.name,
-                            type: character.location?.type,
-                            dimension: character.location?.dimension
-                        ),
-                        episode: character.episode.map { Episode(name: $0?.name ?? "", episode: $0?.episode ?? "") }
-                    )
-                    return Just(mappedCharacter)
+            .flatMap { [weak self] graphqlData -> AnyPublisher<Character, NetworkError> in
+                if let character = self?.dependencies.mapper.map(graphqlData: graphqlData) {
+                    return Just(character)
                         .setFailureType(to: NetworkError.self)
                         .eraseToAnyPublisher()
                 } else {

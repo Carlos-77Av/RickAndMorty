@@ -17,31 +17,38 @@ class CharacterListViewModel: ObservableObject {
     typealias Dependencies = HasGetCharacterListUseCase
     
     @Published private(set) var characterList = [Character]()
+    @Published private(set) var isLoading: Bool = false
     
     private(set) var dependencies: Dependencies
     private var cancellables = Set<AnyCancellable>()
     private var currentPage: Int = 1
+    
+    var showProgressView: Bool {
+        isLoading && characterList.isEmpty
+    }
     
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
     }
     
     func fetchCharacters() {
+        isLoading = true
+        
         dependencies
             .characterUseCase
             .execute(page: currentPage)
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
+            .sink(receiveCompletion: { [weak self] completion in
                 if case .failure(let error) = completion {
                     print(error.localizedDescription)
                 }
+                
+                self?.isLoading = false
             }, receiveValue: { [weak self] characters in
                 guard let self = self, !characters.isEmpty else { return }
                 
                 self.characterList.append(contentsOf: characters)
                 self.currentPage += 1
-                
-                print(characters)
             })
             .store(in: &cancellables)
     }
