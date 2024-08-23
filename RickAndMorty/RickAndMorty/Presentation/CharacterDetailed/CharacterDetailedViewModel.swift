@@ -58,6 +58,7 @@ class CharacterDetailedViewModel: ObservableObject {
             .execute(id: id)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
+                // TODO: Here we can hundle error and display it in an alert
                 if case .failure(let error) = completion {
                     print(error.localizedDescription)
                 }
