@@ -67,7 +67,6 @@ class CharacterDetailedViewModel: ObservableObject {
                 guard let self = self else { return }
                 
                 self.character = character
-                print(character)
             })
             .store(in: &cancellables)
     }
