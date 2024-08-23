@@ -25,7 +25,11 @@ struct CharacterListView: View {
     
     private var characterList: some View {
         ForEach(viewModel.characterList, id: \.id) { character in
-            NavigationLink(destination: Text("\(character.id) - \(character.name)")) {
+            NavigationLink(
+                destination: CharacterDetailedView(
+                    viewModel: .init(dependencies: CharacterDetailedViewModelDependencies()),
+                    character: character)
+            ) {
                 CharacterRowView(character: character)
             }
             .cardStyle()

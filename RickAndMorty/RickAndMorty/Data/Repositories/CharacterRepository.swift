@@ -31,4 +31,37 @@ class CharacterRepository: CharacterRepositoryType {
             }
             .eraseToAnyPublisher()
     }
+    
+    func getCharacterDetail(id: String) -> AnyPublisher<Character, NetworkError> {
+        let query = GetCharacterDetailQuery(id: id)
+        
+        return dependencies
+            .client
+            .request(for: query)
+            .flatMap { graphqlData -> AnyPublisher<Character, NetworkError> in
+                if let character = graphqlData.character {
+                    let mappedCharacter = Character(
+                        id: character.id ?? "",
+                        name: character.name ?? "",
+                        status: character.status, 
+                        species: character.species,
+                        gender: character.gender,
+                        image: character.image,
+                        location: Location(
+                            name: character.location?.name,
+                            type: character.location?.type,
+                            dimension: character.location?.dimension
+                        ),
+                        episode: character.episode.map { Episode(name: $0?.name ?? "", episode: $0?.episode ?? "") }
+                    )
+                    return Just(mappedCharacter)
+                        .setFailureType(to: NetworkError.self)
+                        .eraseToAnyPublisher()
+                } else {
+                    return Fail(error: NetworkError.emptyData)
+                        .eraseToAnyPublisher()
+                }
+            }
+            .eraseToAnyPublisher()
+    }
 }

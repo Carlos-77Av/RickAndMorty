@@ -9,3 +9,14 @@
 // MARK: - CharacterListView
 "character.list.navbar.title" = "Rick and Morty";
 "character.list.card.specie %@" = "Specie: %@";
+
+// MARK: - CharacterListView
+"character.detailed.status %@" = "Status %@";
+"character.detailed.species %@" = "Specie: %@";
+"character.detailed.type %@" = "Type: %@";
+"character.detailed.gender %@" = "Specie: %@";
+"character.detailed.location.title" = "Location";
+"character.detailed.location.name %@" = "Name: %@";
+"character.detailed.location.type %@" = "Type: %@";
+"character.detailed.location.dimension %@" = "Dimension: %@";
+"character.detailed.episodes.title" = "Episodes";

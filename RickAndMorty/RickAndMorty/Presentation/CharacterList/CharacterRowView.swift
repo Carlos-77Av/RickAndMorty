@@ -29,7 +29,6 @@ struct CharacterRowView: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             .clipShape(RoundedRectangle(cornerRadius: 10))
-            .aspectRatio(contentMode: .fill)
             .frame(width: 60, height: 60)
     }
     
