@@ -42,7 +42,16 @@ struct CharacterRowView: View {
             Text(R.string.localizable.characterListCardSpecie(character.species ?? ""))
                 .font(.subheadline)
                 .foregroundColor(.white.opacity(0.7))
+                .padding(.horizontal, 6)
+                .background(capsuleBackground)
         }
+    }
+    
+    private var capsuleBackground: some View {
+        Color
+            .green
+            .opacity(0.6)
+            .clipShape(RoundedRectangle(cornerRadius: 6))
     }
 }
 

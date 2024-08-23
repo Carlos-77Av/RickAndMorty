@@ -60,7 +60,10 @@ struct CharacterListView: View {
             .overlay(Color.black.opacity(0.5))
             .offset(y: offset)
             .onAppear {
-                withAnimation(.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
+                withAnimation(
+                    .easeInOut(duration: 2)
+                    .repeatForever(autoreverses: true)
+                ) {
                     offset = 20
                 }
             }

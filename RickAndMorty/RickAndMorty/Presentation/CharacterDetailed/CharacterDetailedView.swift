@@ -60,7 +60,7 @@ struct CharacterDetailedView: View {
     }
     
     private var basicInformation: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 12) {
             Text(viewModel.character?.name ?? "")
                 .font(.largeTitle)
                 .fontWeight(.bold)
@@ -89,7 +89,7 @@ struct CharacterDetailedView: View {
     private var locationSection: some View {
         Group {
             if let location = viewModel.character?.location {
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: 12) {
                     Text(R.string.localizable.characterDetailedLocationTitle)
                         .font(.headline)
                         .padding(.bottom, 4)
