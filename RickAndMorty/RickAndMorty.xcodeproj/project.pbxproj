@@ -356,7 +356,6 @@
 			isa = PBXGroup;
 			children = (
 				9D38B8962C77218D007FBC50 /* Config */,
-				9D6EF34F2C77AED70080638E /* UIConfig */,
 				9D38B8892C771579007FBC50 /* Networking */,
 			);
 			path = Infrastructure;
@@ -391,6 +390,7 @@
 		9D38B8A12C772358007FBC50 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9DA7EBBA2C78D791002B7FC0 /* Commons */,
 				9D38B8A22C772367007FBC50 /* CharacterList */,
 				9D6EF3692C77E0870080638E /* CharacterDetailed */,
 			);
@@ -405,15 +405,6 @@
 				9D6EF3562C77B53E0080638E /* CharacterRowView.swift */,
 			);
 			path = CharacterList;
-			sourceTree = "<group>";
-		};
-		9D6EF34F2C77AED70080638E /* UIConfig */ = {
-			isa = PBXGroup;
-			children = (
-				9D6EF35B2C77B6CB0080638E /* Modifiers */,
-				9D6EF3592C77B6C00080638E /* Extensions */,
-			);
-			path = UIConfig;
 			sourceTree = "<group>";
 		};
 		9D6EF3592C77B6C00080638E /* Extensions */ = {
@@ -448,6 +439,15 @@
 				9D6EF37C2C7831910080638E /* CharacterMapper.swift */,
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		9DA7EBBA2C78D791002B7FC0 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				9D6EF35B2C77B6CB0080638E /* Modifiers */,
+				9D6EF3592C77B6C00080638E /* Extensions */,
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 		9DAC188D2C784C4D003E5937 /* Mocks */ = {
@@ -910,7 +910,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -967,7 +967,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -994,6 +994,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1027,6 +1028,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
