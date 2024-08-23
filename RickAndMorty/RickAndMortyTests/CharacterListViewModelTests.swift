@@ -18,7 +18,7 @@ final class CharacterListViewModelTests: XCTestCase {
             useCase: MockGetCharacterListUseCase()
         )
         
-        let viewModel = CharacterListViewModel(dependencies: dependencies)
+        viewModel = CharacterListViewModel(dependencies: dependencies)
     }
     
     override func tearDown() {
