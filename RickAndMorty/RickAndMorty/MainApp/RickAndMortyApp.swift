@@ -21,6 +21,7 @@ struct RickAndMortyApp: App {
                         dependencies: CharacterListViewModelDependencies()
                     )
                 )
+                .preferredColorScheme(.dark)
             }
         }
     }
