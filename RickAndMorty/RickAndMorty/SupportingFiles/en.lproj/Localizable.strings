@@ -15,7 +15,7 @@
 "character.detailed.species %@" = "Specie: %@";
 "character.detailed.type %@" = "Type: %@";
 "character.detailed.gender %@" = "Specie: %@";
-"character.detailed.location.title" = "Episodes";
+"character.detailed.location.title" = "Location";
 "character.detailed.location.name %@" = "Name: %@";
 "character.detailed.location.type %@" = "Type: %@";
 "character.detailed.location.dimension %@" = "Dimension: %@";
