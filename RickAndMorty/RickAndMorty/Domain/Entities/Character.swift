@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Character {
+struct Character: Decodable {
     let id: String
     let name: String
     var status: String?

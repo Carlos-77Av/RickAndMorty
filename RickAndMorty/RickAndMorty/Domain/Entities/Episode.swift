@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Episode: Hashable {
+struct Episode: Decodable, Hashable {
     let name: String
     let episode: String
 }
