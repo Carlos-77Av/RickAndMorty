@@ -3,6 +3,7 @@ query GetCharacterDetail($id: ID!) {
     ... CharacterInfo
     status
     gender
+    type
     origin {
       name
     }

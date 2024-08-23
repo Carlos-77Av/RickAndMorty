@@ -7,7 +7,7 @@ public class GetCharacterDetailQuery: GraphQLQuery {
   public static let operationName: String = "GetCharacterDetail"
   public static let operationDocument: ApolloAPI.OperationDocument = .init(
     definition: .init(
-      #"query GetCharacterDetail($id: ID!) { character(id: $id) { __typename ...CharacterInfo status gender origin { __typename name } location { __typename name type dimension } episode { __typename name episode } } }"#,
+      #"query GetCharacterDetail($id: ID!) { character(id: $id) { __typename ...CharacterInfo status gender type origin { __typename name } location { __typename name type dimension } episode { __typename name episode } } }"#,
       fragments: [CharacterInfo.self]
     ))
 
@@ -43,6 +43,7 @@ public class GetCharacterDetailQuery: GraphQLQuery {
         .field("__typename", String.self),
         .field("status", String?.self),
         .field("gender", String?.self),
+        .field("type", String?.self),
         .field("origin", Origin?.self),
         .field("location", Location?.self),
         .field("episode", [Episode?].self),
@@ -53,6 +54,8 @@ public class GetCharacterDetailQuery: GraphQLQuery {
       public var status: String? { __data["status"] }
       /// The gender of the character ('Female', 'Male', 'Genderless' or 'unknown').
       public var gender: String? { __data["gender"] }
+      /// The type or subspecies of the character.
+      public var type: String? { __data["type"] }
       /// The character's origin location
       public var origin: Origin? { __data["origin"] }
       /// The character's last known location
